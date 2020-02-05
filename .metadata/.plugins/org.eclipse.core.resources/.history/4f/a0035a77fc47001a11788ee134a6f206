@@ -1,0 +1,23 @@
+package com.example.demo.model;
+
+import javax.persistence.GeneratedValue;
+
+import org.hibernate.validator.internal.IgnoreForbiddenApisErrors;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+
+@Entity 
+public class Hopital {
+	
+	 // ======================================
+    // =             Attributes             =
+    // ======================================
+
+	@Id
+	@GeneratedValue
+	private Long id;
+	
+	
+	@Column(length = 50)
+	@NotNull
+}

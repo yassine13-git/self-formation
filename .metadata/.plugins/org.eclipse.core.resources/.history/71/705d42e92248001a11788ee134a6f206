@@ -1,0 +1,96 @@
+package com.example.demo.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import com.sun.istack.NotNull;
+
+
+/**
+ * @author yghouali
+ *
+ */
+@Entity
+public class Hopital {
+	
+	 // ======================================
+    // =             Attributes             =
+    // ======================================
+
+	@Id
+	@GeneratedValue
+	private Long Id;
+	
+	
+	@Column(name = "Nom_Hopital", length = 50)
+	@NotNull
+	private String NomHopital;
+	
+	@Column
+	private String Adresse;
+
+	
+	
+	// ======================================
+    // =            Constructors            =
+    // ======================================
+
+	public Hopital(Long id, String nomHopital, String adresse) {		
+		this.NomHopital = nomHopital;
+		this.Adresse = adresse;
+	}
+
+	
+	// ======================================
+    // =        Getters and Setters         =
+    // ======================================
+
+
+	public Long getId() {
+		return Id;
+	}
+
+
+
+	public void setId(Long id) {
+		this.Id = id;
+	}
+
+
+
+	public String getNomHopital() {
+		return NomHopital;
+	}
+
+
+
+	public void setNomHopital(String nomHopital) {
+		NomHopital = nomHopital;
+	}
+
+
+
+	public String getAdresse() {
+		return Adresse;
+	}
+
+
+
+	public void setAdresse(String adresse) {
+		Adresse = adresse;
+	}
+
+
+	
+	// ======================================
+    // =        display         =
+    // ======================================
+	
+	@Override
+	public String toString() {
+		return "Hopital [id=" + Id + ", NomHopital=" + NomHopital + ", Adresse=" + Adresse + "]";
+	}
+	
+}

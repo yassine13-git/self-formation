@@ -1,0 +1,17 @@
+package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+
+@Entity
+public class Medecin {
+	
+	// ======================================
+    // =             Attributes             =
+    // ======================================
+
+	@Id
+	@GeneratedValue
+	private Long Id;
+	
+}

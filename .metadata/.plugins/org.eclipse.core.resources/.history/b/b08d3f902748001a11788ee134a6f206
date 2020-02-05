@@ -1,0 +1,100 @@
+package com.example.demo.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+import com.sun.istack.NotNull;
+
+@Entity
+public class Medecin {
+	
+	// ======================================
+    // =             Attributes             =
+    // ======================================
+
+	@Id
+	@GeneratedValue
+	private Long Id;
+	
+	@Column(length = 30)
+	@NotNull
+	private String Nom;
+	
+	@Column
+	private String Specialite;
+	
+	@OneToOne(mappedBy = "id_Hop")
+	private Hopital hopital;
+	
+
+	
+	
+	// ======================================
+    // =            Constructors            =
+    // ======================================
+
+	public Medecin(Long id, String nom, String specialite, Long id_Hop) {		
+		this.Nom = nom;
+		this.Specialite = specialite;
+		//this.Id_Hop = id_Hop;
+	}
+
+	// ======================================
+    // =        Getters and Setters         =
+    // ======================================
+
+	public Long getId() {
+		return Id;
+	}
+
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
+
+	public String getNom() {
+		return Nom;
+	}
+
+
+	public void setNom(String nom) {
+		Nom = nom;
+	}
+
+
+	public String getSpecialite() {
+		return Specialite;
+	}
+
+
+	public void setSpecialite(String specialite) {
+		Specialite = specialite;
+	}
+	
+	public Long getId_Hop() {
+		return Id_Hop;
+	}
+	
+	public void setId_Hop(Long id_Hop) {
+		Id_Hop = id_Hop;
+		
+	}
+
+	
+
+	// ======================================
+    // =        display         =
+    // ======================================
+	
+	
+	@Override
+	public String toString() {
+		return "Medecin [Id=" + Id + ", Nom=" + Nom + ", Specialite=" + Specialite + ", Id_Hop=" + Id_Hop + "]";
+	}
+	
+}
